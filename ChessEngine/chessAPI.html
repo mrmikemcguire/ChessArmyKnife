@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chess</title>
+</head>
+<body>
+    <button id="chuck">See All</button>
+    <ul id="output"></ul>
+    <script>
+        let joke = document.querySelector('#chuck');
+        const URL = 'https://chessblunders.org/api/mobile/blunder/get';
+        const options = {
+            crossDomain : true,
+            data: {
+                token: 'your-token'
+                }
+        }
+        joke.addEventListener('click', getJoke);
+
+        function getJoke() {
+            fetch(URL, options).then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data);
+                // let fact = "<b>" + data["value"] + "</b>";
+                // document.getElementById("output").innerHTML = fact;
+            }).catch(function (error) {
+                console.log(JSON.stringify(error));
+            });
+        }
+    </script>
+</body>
+</html>
