@@ -342,7 +342,7 @@ var cfg =
     onDragStart: onDragStart,
     onDrop: onDrop,
     onMouseoutSquare: onMouseoutSquare,
-    onMouseoverSquare: onMouseoverSquare,
+    //onMouseoverSquare: onMouseoverSquare,
     onSnapEnd: onSnapEnd
     };
 
