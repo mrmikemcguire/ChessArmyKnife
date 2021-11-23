@@ -6,7 +6,7 @@
  */
 
 var board,
-    game = new Chess();
+    game = new Chess('4k2r/6r1/8/8/8/8/3R4/R3K3 w Qk - 0 1');  //pass in FEN here to actually play the position
 
 /*The "AI" part starts here */
 
