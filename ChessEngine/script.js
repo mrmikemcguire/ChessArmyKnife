@@ -5,8 +5,13 @@
  * https://github.com/jhlywa/chess.js/blob/master/LICENSE
  */
 
-var board,
-    game = new Chess('4k2r/6r1/8/8/8/8/3R4/R3K3 w Qk - 0 1');  //pass in FEN here to actually play the position
+function importFEN()
+{
+var fenImport = document.getElementById("position").value; 
+
+var board;
+var game = new Chess(fenImport);  //pass in FEN here to actually play the position
+
 
 /*The "AI" part starts here */
 
@@ -259,7 +264,7 @@ var getBestMove = function (game)
     return bestMove;
 };
 
-var renderMoveHistory = function (moves) 
+var renderMoveHistory = function (moves) //displays move history in html
     {
     var historyElement = $('#move-history').empty();
     historyElement.empty();
@@ -338,7 +343,7 @@ var greySquare = function(square)
 var cfg = 
     {
     draggable: true,
-    position: 'start',      //This also accepts FEN
+    position: fenImport,      //This also accepts FEN
     onDragStart: onDragStart,
     onDrop: onDrop,
     onMouseoutSquare: onMouseoutSquare,
@@ -347,3 +352,4 @@ var cfg =
     };
 
 board = ChessBoard('board', cfg);
+}
