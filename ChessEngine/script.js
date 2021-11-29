@@ -8,7 +8,7 @@
 function importFEN()
 {
 var fenImport = document.getElementById("position").value; 
-
+console.log(typeof fenImport);
 var board;
 var game = new Chess(fenImport);  //pass in FEN here to actually play the position
 
@@ -339,6 +339,12 @@ var greySquare = function(square)
 
     squareEl.css('background', background);
     };
+
+if (fenImport === '')
+   {
+    fenImport = 'start';
+   }
+   alert ("fenImport = " + fenImport);
 
 var cfg = 
     {
