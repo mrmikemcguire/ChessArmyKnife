@@ -8,8 +8,14 @@
 function importFEN()
 {
 var fenImport = document.getElementById("position").value; 
-console.log(typeof fenImport);
 var board;
+
+if (fenImport === '')
+   {
+    fenImport2 = 'start';
+    fenImport = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+   }
+
 var game = new Chess(fenImport);  //pass in FEN here to actually play the position
 
 
@@ -340,16 +346,15 @@ var greySquare = function(square)
     squareEl.css('background', background);
     };
 
-if (fenImport === '')
-   {
-    fenImport = 'start';
-   }
-   alert ("fenImport = " + fenImport);
+    if (fenImport === '')
+    {
+     fenImport = 'start';
+    }
 
 var cfg = 
     {
     draggable: true,
-    position: fenImport,      //This also accepts FEN
+    position: fenImport2,      //This also accepts FEN
     onDragStart: onDragStart,
     onDrop: onDrop,
     onMouseoutSquare: onMouseoutSquare,
