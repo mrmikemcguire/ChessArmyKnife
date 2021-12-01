@@ -12,7 +12,6 @@ var board;
 
 if (fenImport === '')
    {
-    fenImport2 = 'start';
     fenImport = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
    }
 
@@ -346,15 +345,10 @@ var greySquare = function(square)
     squareEl.css('background', background);
     };
 
-    if (fenImport === '')
-    {
-     fenImport = 'start';
-    }
-
 var cfg = 
     {
     draggable: true,
-    position: fenImport2,      //This also accepts FEN
+    position: fenImport,      //This accepts FEN for board position only
     onDragStart: onDragStart,
     onDrop: onDrop,
     onMouseoutSquare: onMouseoutSquare,
