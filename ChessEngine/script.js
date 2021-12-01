@@ -5,6 +5,13 @@
  * https://github.com/jhlywa/chess.js/blob/master/LICENSE
  */
 
+// allows enter/return key to press betton
+$("#position").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#btn").click();
+    }
+});
+
 function importFEN()
 {
 let fenImport = document.getElementById("position").value; 
